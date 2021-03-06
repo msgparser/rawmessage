@@ -9,7 +9,7 @@ COPY       ./msgparser /validity/msgparser
 EXPOSE     4000/tcp
 ENTRYPOINT /validity/msgparser
 ```
-* How to build ?
+*  **How to build ?**
 ```
 $ ls -l
 total 16
@@ -33,7 +33,7 @@ REPOSITORY              TAG                 IMAGE ID            CREATED         
 hemantrumde/msgparser   v1.2                b028e82c0527        14 seconds ago      222MB
 
 ```
-* Quick local test
+*  **Quick local test**
 
 Before testing locally, make sure about port 4000. You can use ss, lsof, nc commands to confirm this port. You can use different port in this quick test.
 ```
