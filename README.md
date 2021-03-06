@@ -7,7 +7,7 @@
 | src | golang source, Dockerfiles |
 | doc | build, deploy, test documents |
 | smallset | Sample raw email text messages | 
-| deploy | Kubernetes yamls to add resources |
+| deploy | Kubernetes yamls to add & deply resources |
 
 ## Rest API
 The current version supports only one API in this microservice
