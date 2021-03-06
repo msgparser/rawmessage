@@ -1,5 +1,5 @@
 # How to build source?
-The service is implemented in golang. If golang compiler is available on server, then it can be compiled easily. If golang is missing on local server, then it can be
+The service is implemented in golang. If golang compiler is available on server, then source can be compiled easily. If golang is missing on local server, then it can be
 compiled in Docker container. In both the cases, we need Docker engine. Docker system can be installed depending on your Linux flavor. 
 
 ## Compiling by local golang compiler 
@@ -79,4 +79,31 @@ $ ./POST.sh
 .....
 .....
 
+```
+
+# Compliation in GOLANG Docker container 
+If golang compiler is missing on your local server, then golang Docker container can use to build our microservice image.
+
+## ImageBuilder 
+```
+FROM       golang:latest AS builder
+ARG        CFLAGS="-s -w"
+WORKDIR    /src
+COPY      ./msgparser.go /src
+RUN        go build -ldflags "$CFLAGS" /src/msgparser.go
+
+FROM       centos:latest
+ARG        VERSION=1.0
+WORKDIR    /validity
+LABEL      Version=$VERSION
+LABEL      WaterMark="Raw Email text message parser to extract Message fields"
+LABEL      Author="Hemant Rumde"
+COPY     --from=builder /src/msgparser /validity/msgparser
+EXPOSE     4000/tcp
+ENTRYPOINT /validity/msgparser
+```
+* **How to build?**
+```
+$ docker build -t hemantrumde/rawmessage:v1.3 -f ImageBuilder .
+$ docker push hemantrumde/rawmessage:v1.3
 ```
