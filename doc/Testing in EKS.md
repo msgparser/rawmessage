@@ -25,3 +25,63 @@ I have added a public docker repository for this microservice. It does not need 
 docker push hemantrumde/msgparser:tagname
 docker pull hemantrumde/msgparser:tagname
  ```
+# Deployment 
+I have kept yaml files in deploy folder. I used these files to deploy this service in EKS. I used Route 53 subdomain for an instance running in Docker container on EC2.
+Successfully tested with AWS load balancer. 
+
+* **Deployment**
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    technical-exercise: "Raw Message text parser to extract fields"
+  labels:
+    run: msgparser
+  name: msgparser
+  namespace: braintree
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: msgparser
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: msgparser
+    spec:
+      containers:
+      - image: hemantrumde/msgparser:v2.0
+        imagePullPolicy: Always
+        name: msgparser
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+```
+* **Service for Node port**
+```
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: msgparser
+  name: svc-msgparser-nodeport
+  namespace: braintree
+spec:
+  ports:
+  - nodePort: 32577
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: msgparser
+  type: NodePort
+```
