@@ -30,5 +30,7 @@ All testing is successfull and gave expecuted results.
 
 [Containerization](https://github.com/msgparser/rawmessage/blob/main/doc/Containerization.md)
 
+[Deployment](https://github.com/msgparser/rawmessage/blob/main/doc/How%20to%20deploy.md)
+
 [Testing in AWS cloud](https://github.com/msgparser/rawmessage/blob/main/doc/Testing%20in%20EKS.md)
 
