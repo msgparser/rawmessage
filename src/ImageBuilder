@@ -1,0 +1,16 @@
+FROM       golang:latest AS builder
+ARG        CFLAGS="-s -w"
+WORKDIR    /src
+COPY      ./msgparser.go /src
+RUN        go build -ldflags "$CFLAGS" /src/msgparser.go
+
+FROM       centos:latest
+ARG        VERSION=1.0
+WORKDIR    /validity
+LABEL      Version=$VERSION
+LABEL      WaterMark="Raw Email text message parser to extract Message fields"
+LABEL      Author="Hemant Rumde"
+COPY     --from=builder /src/msgparser /validity/msgparser
+EXPOSE     4000/tcp
+ENTRYPOINT /validity/msgparser
+
