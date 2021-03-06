@@ -36,7 +36,15 @@ hemantrumde/msgparser   v1.2                b028e82c0527        14 seconds ago  
 *  **Quick local test**
 
 Before testing locally, make sure about port 4000. You can use ss, lsof, nc commands to confirm this port. You can use different port in this quick test.
+Use postman or curl to test this service with payload.
 ```
 $ docker container run -i -p 4000:4000 hemantrumde/msgparser:v1.2 
 2021/03/06 19:16:55 Raw Email text Parser Version: 1.0
 ```
+
+* **Push image to Docker hub**
+After testing this service locally, push it to docker hub. I have added public repository for this image. This will help us to test this service in EKS.
+```
+$ docker push -t hemantrumde/msgparser:v1.2
+```
+
