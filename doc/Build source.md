@@ -48,3 +48,10 @@ COMMAND     PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 msgparser 22663 hemant    3u  IPv6 311600      0t0  TCP *:terabase (LISTEN)
 
 ```
+# Local sandbox testing 
+Linux curl command can be utilized to test our service locally. 
+```
+$ cd ../smallset
+$ ls -l 
+
+```
