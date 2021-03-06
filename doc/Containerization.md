@@ -1,10 +1,11 @@
 # Microservice Containerization
-Build server may be with or without golang compiler. If golang compiler is avaliable then a binary executable built locally can be containerized by following file
+
+Linux Build server may be with or without golang compiler. If golang compiler is avaliable then a binary executable built locally can be containerized by following file
 *  **Dockerfile**
 ```
 FROM       centos:latest
 WORKDIR    /validity
-COPY       ./bin/msgparser /validity/msgparser
+COPY       ./msgparser /validity/msgparser
 EXPOSE     4000/tcp
 ENTRYPOINT /validity/msgparser
 ```
