@@ -49,9 +49,34 @@ msgparser 22663 hemant    3u  IPv6 311600      0t0  TCP *:terabase (LISTEN)
 
 ```
 # Local sandbox testing 
-Linux curl command can be utilized to test our service locally. 
+Linux curl command can be utilized to test our service locally. Use POST.sh to test service. In POST.sh change SERVICE_HOST to test from local server, EC2 and EKS
 ```
 $ cd ../smallset
 $ ls -l 
+total 328
+-rw-rw-r--. 1 hemant hemant 47243 Apr  1  2011 20110401_1000mercis_14461469_html.msg
+-rw-rw-r--. 1 hemant hemant  8167 Apr  1  2011 20110401_aamarketinginc_14456749_html.msg
+-rw-rw-r--. 1 hemant hemant  7133 Apr  1  2011 20110401_aeg_14465739_html.msg
+-rw-rw-r--. 1 hemant hemant 51288 Apr  1  2011 20110401_alchemyworx_14461429_multialt.msg
+-rw-rw-r--. 1 hemant hemant 34201 Apr  1  2011 20110401_americancollegiatemarketing_14461959_multialt.msg
+-rw-rw-r--. 1 hemant hemant  7639 Apr  1  2011 20110401_beliefnet_14461399_html.msg
+-rw-rw-r--. 1 hemant hemant 13543 Apr  1  2011 20110401_beliefnet_14464159_html.msg
+-rw-rw-r--. 1 hemant hemant 12284 Apr  1  2011 20110401_boydgamingcorporation_14465279_multialt.msg
+-rw-rw-r--. 1 hemant hemant  2903 Apr  1  2011 20110401_citibanksingaporelimited_14456499_multialt.msg
+-rw-rw-r--. 1 hemant hemant 12638 Apr  1  2011 20110401_cobaltgroup_14464029_html.msg
+-rw-rw-r--. 1 hemant hemant 99805 Apr  1  2011 20110401_compostmarketingab_14459379_multialt.msg
+-rw-rw-r--. 1 hemant hemant  7242 Apr  1  2011 20110401_corel_14460139_html.msg
+-rwxrwxr-x. 1 hemant hemant   278 Mar  6 10:46 POST.sh
+
+$ ./POST.sh
+......
+======[ 20110401_beliefnet_14461399_html.msg ]====================
+{"To":"\u003cbeliefnet@cp.monitor1.returnpath.net\u003e","From":"Announce - Beliefnet Sponsor \u003cspecialoffers@mail.beliefnet.com\u003e","Date":"Fri,  1 Apr 2011 08:12:00 -0600 (MDT)","Subject":"[SP] Grant Funding May Be Available for Top Online Colleges. Get Free Info Today.","MessageID":"\u003c527817310.344.1301667087687.JavaMail.root@mail.beliefnet.com\u003e"}
+
+
+======[ 20110401_beliefnet_14464159_html.msg ]====================
+{"To":"\u003cbeliefnet@cp.monitor1.returnpath.net\u003e","From":"Chicken Soup - Beliefnet Partner \u003cspecialoffers@mail.beliefnet.com\u003e","Date":"Fri,  1 Apr 2011 10:32:42 -0600 (MDT)","Subject":"[SP] The Art of Positive Thinking","MessageID":"\u003c463918295.411.1301674909118.JavaMail.root@mail.beliefnet.com\u003e"}
+.....
+.....
 
 ```
