@@ -1,6 +1,5 @@
 # How to build source?
-The service is implemented in golang. If golang compiler is available on server, then source can be compiled easily. If golang is missing on local server, then it can be
-compiled in Docker container. In both the cases, we need Docker engine. Docker system can be installed depending on your Linux flavor. 
+The service is implemented in golang. If golang compiler is available on server, then source can be compiled easily. If golang is missing on local server, then source can be compiled in Docker container. In both the cases, we need Docker engine. Docker system can be installed depending on your Linux flavor. 
 
 ## Compiling by local golang compiler 
 
@@ -49,7 +48,7 @@ msgparser 22663 hemant    3u  IPv6 311600      0t0  TCP *:terabase (LISTEN)
 
 ```
 # Local sandbox testing 
-Linux curl command can be utilized to test our service locally. Use POST.sh to test service. In POST.sh change SERVICE_HOST to test from local server, EC2 and EKS
+Linux curl command can be utilized to test our service locally. Use POST.sh to test service. In POST.sh change SERVICE_HOST to test on local server, EC2 or EKS
 ```
 $ cd ../smallset
 $ ls -l 
