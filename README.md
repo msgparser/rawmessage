@@ -24,5 +24,10 @@ All testing is successfull and gave expected results.
 ![AWS LB](https://github.com/msgparser/rawmessage/blob/main/doc/AWS-LB.PNG)
 
 # Build 
-https://github.com/msgparser/rawmessage/blob/main/doc/Build%20source.md
+
+[How to build?](https://github.com/msgparser/rawmessage/blob/main/doc/Build%20source.md)
+
+[Containerization](https://github.com/msgparser/rawmessage/blob/main/doc/Containerization.md)
+
+[Testing in AWS cloud](https://github.com/msgparser/rawmessage/blob/main/doc/Testing%20in%20EKS.md)
 
