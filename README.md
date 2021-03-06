@@ -17,7 +17,7 @@ The current version supports only one API in this microservice
 | http://Server-name:4000/rawmsg | Consumer's interface | POST | application/text | Json output|
 
 ## Testing
-All testing were successfull and gave expected results.
+All testing is successfull and gave expected results.
 * Service is containerized on Linux server & tested successfully by smallset sample data files
 * Exected on bash and tested with local port 4000 
 * Service is tested successully in EKS with Route 53 subdomain and LB
