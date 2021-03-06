@@ -21,7 +21,7 @@ $ ls -l msgparser
 -rwxrwxr-x. 1 hemant hemant 6624538 Mar  6 09:52 msgparser
 ```
 ## Local Execution 
-In this exercise TCP port 4000 is hardcoded. Currently os.Args is not used to accept a port by command line arguments. Rum msgparser binary and verify listening port from different window.
+In this exercise TCP port 4000 is hardcoded. Currently os.Args is not used to accept a port by command line arguments. Execute <code>msgparser</code> binary and verify listening port from different window.
 ```
 $ ./msgparser
 2021/03/06 10:23:27 Raw Email text Parser Version: 1.0
