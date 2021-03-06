@@ -106,3 +106,8 @@ ENTRYPOINT /validity/msgparser
 $ docker build -t hemantrumde/rawmessage:v1.3 -f ImageBuilder .
 $ docker push hemantrumde/rawmessage:v1.3
 ```
+* **How to run?**
+```
+$ docker container run --rm -i -p 4000:4000 hemantrumde/rawmessage:v1.3
+2021/03/06 21:55:45 Raw Email text Parser Version: 1.0
+```
