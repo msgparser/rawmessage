@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    technical-exercise: "Microservice to process raw email text message"
+  labels:
+    title: msgparser-pod
+  name: msgparser-pod
+  namespace: braintree
+spec:
+  containers:
+  - image: hemantrumde/msgparser:v2.0
+    imagePullPolicy: IfNotPresent
+    name: msgparser-container
+    ports:
+    - containerPort: 4000
+      protocol: TCP

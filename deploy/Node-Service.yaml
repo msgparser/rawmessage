@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: msgparser
+  name: svc-msgparser-nodeport
+  namespace: braintree
+spec:
+  ports:
+  - nodePort: 32577
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    run: msgparser
+  type: NodePort
